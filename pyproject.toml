@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "harnessbench"
+version = "0.1.0"
+description = "Benchmark agent harnesses across models — success rate, latency, cost, and context efficiency in one report."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Nitin Kushwaha" }]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+harnessbench = "harnessbench.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/harnessbench"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
